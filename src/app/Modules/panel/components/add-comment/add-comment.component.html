@@ -1,0 +1,58 @@
+<div class="mt-5 w-50 text-center m-auto">
+  <h4>{{ editOrAdd }}</h4>
+
+  <form #comForm="ngForm" (ngSubmit)="callApi()">
+    <div class="mb-3">
+      <label for="comName" class="form-label">Comment Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="comname"
+        id="comName"
+        [(ngModel)]="newComment.name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="comBody" class="form-label">Comment Body</label>
+      <input
+        type="text"
+        class="form-control"
+        name="combody"
+        id="comBody"
+        [(ngModel)]="newComment.body"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="comEmail" class="form-label">Email</label>
+      <input
+        #comEmail="ngModel"
+        type="email"
+        name="comemail"
+        class="form-control"
+        id="comEmail"
+        [(ngModel)]="newComment.email"
+        required
+        email
+      />
+    </div>
+    <div class="mb-3">
+      <label for="postId" class="form-label">Post Id</label>
+      <input
+        type="number"
+        class="form-control"
+        name="postId"
+        id="postId"
+        [(ngModel)]="newComment.postId"
+      />
+    </div>
+    <button
+      [disabled]="comForm.invalid"
+      type="submit"
+      class="btn btn-success mb-5"
+    >
+      {{ editOrAdd }} Comment
+    </button>
+  </form>
+</div>

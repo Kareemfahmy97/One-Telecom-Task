@@ -1,0 +1,44 @@
+<div class="d-flex fs-5 text-center justify-content-center">
+  <div
+    style="width: 25rem"
+    class="card mt-5 p-5 bg-dark text-light shadow-lg p-3 mb-5 rounded"
+  >
+    <div>
+      <p class="h3 mb-3">Register new acctount</p>
+      <div class="card-title">
+        <input
+          type="text"
+          class="formControl"
+          placeholder="Email"
+          #Email
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #userPassword
+          required
+        />
+      </div>
+      <button
+        class="btn btn-primary m-2 fs-5"
+        (click)="authService.registerUser(Email.value, userPassword.value)"
+      >
+        Register
+      </button>
+      <div class="mt-4">
+        <p>Already have an account?</p>
+        <a
+          routerLink="/login"
+          routerLinkActive="active"
+          class="btn btn-warning"
+          role="button"
+          >Login</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

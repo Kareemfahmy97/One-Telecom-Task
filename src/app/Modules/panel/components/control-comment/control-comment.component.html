@@ -1,0 +1,47 @@
+<div class="p-5">
+  <app-add-comment
+    *ngIf="addClicked"
+    [editOrAdd]="whichMode"
+    [commentToEdit]="itemToEdit"
+    (newItemEvent)="updateMyTable($event)"
+  ></app-add-comment>
+  <table class="table bg-dark text-light">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Body</th>
+        <th scope="col">Email</th>
+        <th scope="col">Edit</th>
+        <td>
+          <button class="btn btn-success rounded" (click)="addComment()">
+            Add+
+          </button>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container>
+        <tr *ngFor="let comment of commentsList">
+          <th scope="row">{{ comment.id }}</th>
+          <td>{{ comment.name }}</td>
+          <td>{{ comment.body }}</td>
+          <td>{{ comment.email }}</td>
+          <td>
+            <button class="btn btn-warning rounded" (click)="editItem(comment)">
+              Edit
+            </button>
+            <!-- <a
+              class="btn btn-warning mx-2"
+              role="button"
+              routerLinkActive="active"
+              [routerLink]="[currentUrl, comment.id]"
+              >Edit</a
+            > -->
+          </td>
+        </tr>
+      </ng-container>
+      <tr></tr>
+    </tbody>
+  </table>
+</div>

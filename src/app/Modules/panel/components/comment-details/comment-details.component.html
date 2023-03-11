@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center mt-4">
+  <div class="card bg-dark text-white" style="width: 18rem">
+    <div class="card-body">
+      <p class="card-text">{{ comment?.id }}</p>
+      <h5 class="card-title">{{ comment?.name }}</h5>
+      <p class="card-text">{{ comment?.body }}</p>
+      <p class="card-text">{{ comment?.email }}</p>
+      <button class="btn btn-primary" (click)="goBack()">Go Back</button>
+    </div>
+  </div>
+</div>

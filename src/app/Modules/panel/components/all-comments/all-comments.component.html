@@ -1,0 +1,37 @@
+<div class="container d-flex bg-dark m-auto text-wrap align-items-center mt-3">
+  <div class="row text-center m-auto justify-content-evenly">
+    <ng-container *ngFor="let comment of commentsList">
+      <div class="card col-3 m-1 p-2">
+        <div class="card-body">
+          <p class="card-text">{{ comment?.id }}</p>
+
+          <h5 class="card-title">{{ comment.name }}</h5>
+          <div class="text-break">
+            <p class="card-text">
+              {{ comment.body }}
+            </p>
+          </div>
+        </div>
+        <div class="mb-0 p-2">
+          <p>{{ comment.email }}</p>
+          <button
+            class="btn btn-danger mx-2"
+            (click)="deleteComment(comment.id)"
+          >
+            Delete
+          </button>
+          <a
+            class="btn btn-primary mx-2"
+            role="button"
+            routerLinkActive="active"
+            [routerLink]="[currentUrl, comment.id]"
+            >View</a
+          >
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
+<!-- [routerLink]="['/panel/comments/all/', comment.id]" -->
+<!--  -->

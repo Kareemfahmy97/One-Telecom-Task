@@ -1,0 +1,42 @@
+<div class="d-flex fs-5 text-center justify-content-center align-item-center">
+  <div style="width: 25rem" class="card mt-5 p-5 bg-dark text-light">
+    <div>
+      <h3>Sign In</h3>
+      <div class="card-title">
+        <input
+          type="text"
+          class="formControl"
+          placeholder="Email"
+          #Email
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          class="formControl"
+          placeholder="Password"
+          #userPassword
+          required
+        />
+      </div>
+
+      <button
+        class="btn btn-primary m-2 fs-5"
+        (click)="loginUser(Email.value, userPassword.value)"
+      >
+        Login
+      </button>
+      <div class="mt-4">
+        <p>Didn't have an account?</p>
+        <a
+          routerLink="/register"
+          routerLinkActive="active"
+          class="btn btn-warning"
+          role="button"
+          >Register</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
